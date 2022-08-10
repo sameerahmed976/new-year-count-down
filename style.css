@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Mono:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* Typography */
+  --regular-font: "Lato", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  --heading-font: "Roboto Mono", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    monospace, sans-serif;
+
+  /* h5 font size paragraph */
+
+  /* start of for mobile */
+
+  --font-size-s-h1: 3.052rem;
+
+  --font-size-s-h2: 2.441rem;
+
+  --font-size-s-h3: 1.953rem;
+
+  --font-size-s-h4: 1.563rem;
+
+  --font-size-s-h5: 1.25rem;
+  /* major third 1.250 */
+  --font-size-s-h6: 1rem;
+  /* end of for mobile */
+
+  --line-height: 1.75;
+
+  --box-shadow-1: 2px 4px 6px #000;
+
+  --transition-8: all 0.8s ease-in-out;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--regular-font);
+  /* font size :16px */
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* mobile */
+
+h1 {
+  font-size: var(--font-size-s-h1);
+}
+h2 {
+  font-size: var(--font-size-s-h2);
+}
+h3 {
+  font-size: var(--font-size-s-h3);
+}
+h4 {
+  font-size: var(--font-size-s-h4);
+}
+h5 {
+  font-size: var(--font-size-s-h5);
+}
+h6 {
+  font-size: var(--font-size-s-h6);
+}
+p {
+  font-size: var(--font-size-s-h5);
+}
+
+.background {
+  position: absolute;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.158),
+      rgba(255, 255, 255, 0.815)
+    ),
+    url("/new_year.jpg") center/cover no-repeat;
+  min-height: 100vh;
+  z-index: -1;
+  width: 100%;
+}
+
+.heading {
+  padding: 5rem 0;
+}
+
+.heading h2 {
+  font-family: var(--heading-font);
+  text-align: center;
+  letter-spacing: 2px;
+  color: rgb(136, 0, 248);
+  text-shadow: 2px 4px 6px rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
+.hours-container,
+.minutes-container,
+.seconds-container,
+.days-container {
+  text-align: center;
+  text-shadow: 2px 4px 6px rgb(255, 255, 255);
+  background-color: yellowgreen;
+  box-shadow: var(--box-shadow-1);
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  animation: bounce 1s linear infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(5%);
+  }
+  25% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+h4 {
+  text-transform: capitalize;
+  font-size: var(--font-size-s-h3);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: var(--font-size-s-h5);
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(136, 0, 248);
+}
+
+@media (min-width: 600px) {
+  .container {
+    gap: 2rem;
+  }
+}
