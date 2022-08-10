@@ -137,6 +137,12 @@ p {
   animation: bounce 1s linear infinite alternate;
 }
 
+h1 {
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(5%);
