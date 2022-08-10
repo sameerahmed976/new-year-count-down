@@ -138,6 +138,7 @@ p {
   cursor: pointer;
   width: 40%;
   padding: 0.5rem;
+  -webkit-animation: bounce 1s linear infinite alternate;
   animation: bounce 1s linear infinite alternate;
 }
 
@@ -145,6 +146,21 @@ h1 {
   color: white;
   text-align: center;
   padding-top: 1rem;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(5%);
+  }
+  25% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
 }
 
 @keyframes bounce {
@@ -186,7 +202,17 @@ p {
   border-top: 16px solid #3498db;
   width: 120px;
   height: 120px;
+  -webkit-animation: spinner 0.5s linear infinite;
   animation: spinner 0.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spinner {
