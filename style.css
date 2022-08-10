@@ -90,6 +90,7 @@ p {
 }
 
 .background {
+  display: none;
   position: absolute;
   background: linear-gradient(
       to bottom,
@@ -118,9 +119,11 @@ p {
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 0 auto;
+  margin-top: -4rem;
 }
 
 .hours-container,
@@ -131,9 +134,10 @@ p {
   text-shadow: 2px 4px 6px rgb(255, 255, 255);
   background-color: yellowgreen;
   box-shadow: var(--box-shadow-1);
-  padding: 0.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  width: 40%;
+  padding: 0.5rem;
   animation: bounce 1s linear infinite alternate;
 }
 
@@ -160,20 +164,78 @@ h1 {
 
 h4 {
   text-transform: capitalize;
-  font-size: var(--font-size-s-h3);
+  font-size: var(--font-size-s-h4);
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 p {
-  font-size: var(--font-size-s-h5);
+  font-size: var(--font-size-s-h6);
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: rgb(136, 0, 248);
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spinner 0.5s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.next-year {
+  color: rgba(104, 0, 241, 0.8);
+  text-align: center;
+  z-index: 2;
+  margin-top: 4rem;
+  font-size: 2rem;
 }
 
 @media (min-width: 600px) {
   .container {
-    gap: 2rem;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .hours-container,
+  .minutes-container,
+  .seconds-container,
+  .days-container {
+    width: 20%;
+  }
+  .next-year {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  .container {
+    flex-direction: row;
+  }
+  .hours-container,
+  .minutes-container,
+  .seconds-container,
+  .days-container {
+    width: 10%;
   }
 }
